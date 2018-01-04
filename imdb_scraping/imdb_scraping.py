@@ -23,7 +23,7 @@ def page_extraction(soup_object, content_type):
     """
     Extraction from titles page
     :param soup_object: HTML object for scraping.
-    :param content_type: Type of the hooq content.
+    :param content_type: Type of the content.
     :return: Extracted data from IMDB titles page.
     """
     countries = []
@@ -280,7 +280,7 @@ def get_data(imdb_id, ip_proxy, content_type):
 def generate_imdb_data(imdb_id, content_id, content_type, vod_type, proxy=None):
     result_dic = get_data(imdb_id, proxy, content_type)
 
-    data_out = pd.DataFrame({'hooq_id': [content_id],
+    data_out = pd.DataFrame({'_id': [content_id],
                 'imdb_id': [imdb_id],
                 'imdb_title': [result_dic['page']['imdb_title']],
                 'production_year': [result_dic['page']['release_year']],
